@@ -31,6 +31,12 @@ use core::fmt::Write;
 use spinning_top::Spinlock;
 use uart_16550::SerialPort;
 
+#[cfg(not(any(feature = "stable", feature = "nightly")))]
+compile_error!("Specify either `stable` or `nightly` feature.");
+
+#[cfg(all(feature = "stable", feature = "nightly"))]
+compile_error!("`stable` and `nightly` features cannot be enabled at the same time.");
+
 static PORT: Lazy<Spinlock<SerialPort>> = Lazy::new(|| {
     let mut port = unsafe { SerialPort::new(0x3f8) };
 
