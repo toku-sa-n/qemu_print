@@ -3,6 +3,12 @@ name = "qemu_print"
 version = "0.1.0"
 authors = ["Hiroki Tokunaga <tokusan441@gmail.com>"]
 edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "A crate prividing `qemu_print!` and `qemu_println!` macros to print strings to the console for debugging."
+repository = "https://github.com/toku-sa-n/qemu_print"
+readme = "README.md"
+categories = ["no-std", "os"]
+keywords = ["no_std", "OS", "QEMU"]
 
 [features]
 default = ["nightly"]
