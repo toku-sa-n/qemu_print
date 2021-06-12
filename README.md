@@ -26,7 +26,7 @@ qemu_println!("x = {}", x);
 This crate has two features:
 
 - `nightly`: This is enabled by default. The Nightly Rust must be enabled.
-- `stable`: Use this feature if you do not use the Nightly Rust.  Add `--no-default-features, --features = ["stable"]` to `Cargo.toml`'s dependency option. This feature uses [`cc`](https://github.com/alexcrichton/cc-rs) crate as a build-time dependency. You need to install [the compile-time requirements](https://github.com/alexcrichton/cc-rs#compile-time-requirements). This feature only supports targets which use System V AMD64 ABI.
+- `stable`: Use this feature if you do not use the Nightly Rust.  Add `default-features = false, features = ["stable"]` to `Cargo.toml`'s dependency option. This feature uses [`cc`](https://github.com/alexcrichton/cc-rs) crate as a build-time dependency. You need to install [the compile-time requirements](https://github.com/alexcrichton/cc-rs#compile-time-requirements). This feature only supports targets which use System V AMD64 ABI.
 
 Enable one of these features. If both, or none of them are specified, this crate will emit a compile error.
 
