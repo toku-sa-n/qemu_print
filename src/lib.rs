@@ -6,7 +6,7 @@
 //! Add `-serial stdio` to the QEMU's commandline parameters.
 //!
 //! ```text
-//! qemu-system-x86_64 ... -serial stdio
+//! qemu-system-x86_64 -serial stdio /* other parameters... */
 //! ```
 //!
 //! Invoke macros like as [`print!`] and [`println!`].

@@ -7,7 +7,7 @@ A Rust library to print strings to a console using QEMU's serial port support.
 Add `-serial stdio` to the QEMU's command line parameters.
 
 ```
-qemu-system-x86_64 -serial stdio /* other parameters ... */
+qemu-system-x86_64 -serial stdio /* other parameters... */
 ```
 
 Invoke macros like as [`print!`](https://doc.rust-lang.org/std/macro.print.html) and [`println!`](https://doc.rust-lang.org/std/macro.println.html).
