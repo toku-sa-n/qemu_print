@@ -18,4 +18,4 @@ nightly = ["uart_16550/nightly"]
 [dependencies]
 conquer-once = { version = "0.3.2", default-features = false }
 spinning_top = "0.2.4"
-uart_16550 = { default-features = false, git = "https://github.com/toku-sa-n/uart_16550", branch = "git_based" }
+uart_16550 = { version = "0.2.15", default-features = false }
