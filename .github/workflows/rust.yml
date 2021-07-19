@@ -44,28 +44,24 @@ jobs:
       - name: Build the documentation for testing
         run: cargo doc --no-default-features --features=stable
 
-  build_for_stable:
+  build:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: cargo build --verbose --no-default-features --features=stable
-    - name: Run tests
-      run: cargo test --verbose --no-default-features --features=stable
-
-  build_for_nightly:
-
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        toolchain: [stable, nightly]
 
     steps:
     - uses: actions/checkout@v2
+
     - uses: actions-rs/toolchain@v1
       with:
-        toolchain: nightly
+        toolchain: ${{ matrix.toolchain }}
         override: true
+
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --no-default-features --features ${{ matrix.toolchain }}
+
     - name: Run tests
-      run: cargo test --verbose
+      run: cargo test --verbose --no-default-features --features ${{ matrix.toolchain }}
